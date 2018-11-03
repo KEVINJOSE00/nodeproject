@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Autocomplete functionality</title>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            var availableTutorials = [
+               "ActionScript",
+               "Bootstrap",
+               "C",
+               "C++",
+               "Ecommerce",
+               "Jquery",
+               "Groovy",
+               "Java",
+               "JavaScript",
+               "Lua",
+               "Perl",
+               "Ruby",
+               "Scala",
+               "Swing",
+               "XHTML"	
+            ];
+            $( "#automplete-3" ).autocomplete({
+               minLength:2,   
+               delay:500,   
+               source: availableTutorials
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+      <!-- HTML --> 
+      <div class = "ui-widget">
+         <p>Type two letter for e.g:ja,sc etc</p>
+         <label for = "automplete-3">Tags: </label>
+         <input id = "automplete-3">
+      </div>
+   </body>
+</html>

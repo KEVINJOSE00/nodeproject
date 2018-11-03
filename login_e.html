@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+
+$('#username').editable({
+    type: 'text',
+    url: '/post',    
+    pk: 1,    
+    title: 'Enter username',
+    ajaxOptions: {
+        type: 'put'
+    }        
+});
+
+$.mockjax({
+    url: '/post',
+    responseTime: 200,
+    response: function(settings) {
+        console.log(settings);
+    }
+}); 
+
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me</button>
+
+<p>X-editable: submit via PUT method</p>
+<div style="margin: 150px">
+    <a href="#" id="username">awesome</a>
+</div>
+
+</body>
+</html>
+
